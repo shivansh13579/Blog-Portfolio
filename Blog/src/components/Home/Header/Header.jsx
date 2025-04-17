@@ -104,43 +104,50 @@ export default function Header() {
       </div>
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="fixed inset-0 bg-white text-black shadow-lg p-5 md:hidden z-30 transition ease-linear duration-300">
-          <div className="flex justify-between items-center h-fit w-full border-b pb-3 mb-5">
-            <h1 className="text-2xl md:text-3xl font-semibold">𝕊𝕊_𝔹𝕝𝕠𝕘</h1>
-            <button onClick={() => setMenuOpen(!menuOpen)}>
-              <X className="text-xl" />
-            </button>
-          </div>
-          <div>
-            <ul className="flex flex-col gap-8">
-              {navLink.map((data) => (
-                <li
-                  key={data.name}
-                  className="cursor-pointer hover:text-gray-600 uppercase "
+      <div
+        className={`fixed top-0 left-0 bottom-0 w-[80%] sm:w-[60%] bg-white text-black shadow-lg p-5 md:hidden z-30 transform transition-transform duration-300 ease-in-out ${
+          menuOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <div className="flex justify-between items-center h-fit w-full border-b pb-3 mb-5">
+          <h1 className="text-2xl md:text-3xl font-semibold">𝕊𝕊_𝔹𝕝𝕠𝕘</h1>
+          <button onClick={() => setMenuOpen(false)}>
+            <X className="text-xl" />
+          </button>
+        </div>
+        <div>
+          <ul className="flex flex-col gap-8">
+            {navLink.map((data) => (
+              <li
+                key={data.name}
+                className="cursor-pointer hover:text-gray-600 uppercase"
+              >
+                <Link
+                  to={data.link}
+                  onClick={() => {
+                    handleChange(data.photo);
+                    setMenuOpen(false); // Close menu on click
+                  }}
+                  className="w-full flex gap-2 hover:bg-gray-200 py-1 px-4 rounded-sm"
                 >
-                  <Link
-                    to={data.link}
-                    onClick={() => handleChange(data.photo)}
-                    className="w-full flex gap-2 hover:bg-gray-200 py-1 px-4 rounded-sm"
-                  >
-                    <span>{data.icon}</span>
-                    {data.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-6 px-4">
-              <LoginButton />
-            </div>
+                  <span>{data.icon}</span>
+                  {data.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-6 py-6 px-4">
+            <LoginButton />
           </div>
         </div>
-      )}
+      </div>
 
       {/* Hero Text */}
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
-        <h1 className="text-3xl md:text-5xl font-bold">𝕊𝕊_𝔹𝕝𝕠𝕘</h1>
-        <h2 className="text-xl md:text-2xl">Web Development Blog</h2>
+        <h1 className="text-3xl md:text-5xl font-bold pb-2">𝕊𝕊_𝔹𝕝𝕠𝕘</h1>
+        <h2 className="text-xl md:text-3xl pt-2 font-semibold">
+          Web Development Blog
+        </h2>
       </div>
     </div>
   );
