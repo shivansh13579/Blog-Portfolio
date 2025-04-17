@@ -47,7 +47,12 @@ export default function LoginButton() {
         {user.email === "shivansh0975@gmail.com" &&
           user.password === "shivam135" && (
             <p
-              onClick={() => window.open("http://localhost:5174", "_blank")}
+              onClick={() =>
+                window.open(
+                  "https://blog-portfolio-self.vercel.app/signin",
+                  "_blank"
+                )
+              }
               className="flex items-center gap-3 bg-black text-white px-4 py-2 rounded-full cursor-pointer"
             >
               Admin
