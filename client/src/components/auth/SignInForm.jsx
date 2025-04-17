@@ -43,7 +43,7 @@ export default function SignInForm() {
       if (userSnap.exists()) {
         login(user);
         setLoading(false);
-        navigate("/admin");
+        navigate("/");
         toast.success("Login successful!");
       }
     } catch (error) {
