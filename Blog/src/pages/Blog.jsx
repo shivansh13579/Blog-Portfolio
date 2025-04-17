@@ -65,11 +65,7 @@ function CategoryCard({ category }) {
   return (
     <Link to={`/categories/${category?.id}`}>
       <div className="flex flex-col items-center justify-center gap-2 hover:bg-slate-100 rounded-xl p-6">
-        <img
-          className="w-full sm:w-[200px] sm:h-[200px]"
-          src={category?.image}
-          alt=""
-        />
+        <img className="w-full " src={category?.image} alt="" />
         <h1 className="font-bold">{category?.categoryName}</h1>
       </div>
     </Link>

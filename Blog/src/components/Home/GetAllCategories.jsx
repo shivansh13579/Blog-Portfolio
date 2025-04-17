@@ -61,11 +61,7 @@ export const CategoryDesign = ({ post }) => {
   return (
     <div className=" py-4 ">
       <div className="flex flex-col items-center justify-center gap-2 hover:bg-slate-100 rounded-xl p-6">
-        <img
-          className="w-full h-full hover:opacity-30 rounded-sm"
-          src={post?.image}
-          alt=""
-        />
+        <img className="w-full h-full rounded-sm" src={post?.image} alt="" />
         <h1 className="font-bold">{post?.categoryName}</h1>
       </div>
     </div>

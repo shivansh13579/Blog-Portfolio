@@ -42,8 +42,8 @@ function Header() {
         <div className="flex flex-col gap-3 py-4 mt-4">
           <div className="w-full  flex gap-5 items-center justify-start">
             <a
-              href="/Resume.pdf"
-              download="Resume.pdf"
+              href="/shiva.pdf"
+              download="shiva.pdf"
               className="py-2 px-4 bg-red-500 font-serif font-semibold text-white w-full rounded-md hover:bg-red-700 flex-1 flex items-center justify-start gap-1"
             >
               Resume
@@ -58,18 +58,30 @@ function Header() {
             </Link>
           </div>
           <div className="flex gap-8 pt-7">
-            <span className="bg-black hover:bg-red-800 py-2 px-2 rounded-full text-white">
+            <a
+              href={"https://github.com/shivansh13579"}
+              className="bg-black hover:bg-red-800 py-2 px-2 rounded-full text-white"
+            >
               <Github />
-            </span>
-            <span className="bg-blue-500 hover:bg-red-800 py-2 px-2 rounded-full text-white">
+            </a>
+            <a
+              href={"https://www.linkedin.com/in/shivam-kumar-223ba9263/"}
+              className="bg-blue-500 hover:bg-red-800 py-2 px-2 rounded-full text-white"
+            >
               <Linkedin />
-            </span>
-            <span className="bg-blue-500 text-white hover:bg-red-800 py-2 px-2 rounded-full">
+            </a>
+            <a
+              href={"https://www.linkedin.com/in/shivam-kumar-223ba9263/"}
+              className="bg-blue-500 text-white hover:bg-red-800 py-2 px-2 rounded-full"
+            >
               <Twitter />
-            </span>
-            <span className="bg-red-500 text-white hover:bg-red-800 py-2 px-2 rounded-full">
+            </a>
+            <a
+              href={"https://www.linkedin.com/in/shivam-kumar-223ba9263/"}
+              className="bg-red-500 text-white hover:bg-red-800 py-2 px-2 rounded-full"
+            >
               <Instagram />
-            </span>
+            </a>
           </div>
         </div>
       </div>

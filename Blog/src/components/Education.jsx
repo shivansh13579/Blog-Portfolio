@@ -8,7 +8,8 @@ function Education() {
       position: "Intern",
       duration: "December 2024 - Present",
       company: "Tech Instance",
-      image: "https://techinstance.tech/img/about.jpg",
+      image:
+        "https://media.licdn.com/dms/image/v2/D5603AQHdEBwk513FVA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1729945859843?e=1750291200&v=beta&t=p8U9iDbk0j6EsTCldOiQ00rQbSmgJiNgEG3Cn7vzFZw",
       tasks: [
         "Building an E-commerce Project for a client using React.js for frontend and Firebase for data storage.",
         "Deployed the E-commerce project using Firebase Hosting. Faced many challenges during deployment.",
