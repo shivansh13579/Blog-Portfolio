@@ -26,20 +26,27 @@ function Post() {
   console.log("post", post);
 
   return (
-    <main className="w-full md:[70%] mx-auto flex justify-center">
-      <section className="flex flex-col gap-5 px-16 py-10 max-w-[800px]">
+    <main className="w-full max-w-7xl mx-auto flex justify-center px-4 md:px-8">
+      <section className="flex flex-col gap-5 py-10 w-full max-w-3xl">
         {post && (
           <>
             <CategoryCard categoryId={post.category} />
-            <h1 className="text-2xl font-bold">{post.title}</h1>
-            <img className="w-full object-cover" src={post.image} alt="" />
-            <div className="flex justify-between items-center">
+            <h1 className="text-2xl md:text-3xl font-bold">{post.title}</h1>
+            <img
+              className="w-full object-cover rounded-md"
+              src={post.image}
+              alt=""
+            />
+            <div className="flex flex-col md:flex-row justify-between md:items-center gap-2">
               <AuthorCard authorId={post.author} />
               <h5 className="text-xs text-gray-500">
                 {post.createdAt?.toDate()?.toLocaleDateString()}
               </h5>
             </div>
-            <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
+            <div
+              className="prose prose-sm sm:prose md:prose-lg max-w-none"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            ></div>
           </>
         )}
       </section>

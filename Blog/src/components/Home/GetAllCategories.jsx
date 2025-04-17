@@ -59,14 +59,14 @@ export default GetAllCategories;
 
 export const CategoryDesign = ({ post }) => {
   return (
-    <div className="group py-4 ">
-      <div className="relative w-full h-full group-hover:brightness-75 transform duration-300">
-        <img className="w-full h-[200px] rounded-sm" src={post?.image} alt="" />
-        <div className="w-full h-full absolute inset-0 flex items-center justify-center">
-          <h1 className="text-[#CCFF01] text-xl text-center font-serif font-semibold opacity-0 group-hover:opacity-100 transform duration-300">
-            {post?.categoryName}
-          </h1>
-        </div>
+    <div className=" py-4 ">
+      <div className="flex flex-col items-center justify-center gap-2 hover:bg-slate-100 rounded-xl p-6">
+        <img
+          className="w-full h-full hover:opacity-30 rounded-sm"
+          src={post?.image}
+          alt=""
+        />
+        <h1 className="font-bold">{post?.categoryName}</h1>
       </div>
     </div>
   );

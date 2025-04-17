@@ -82,7 +82,7 @@ export default function Header() {
             {navLink.map((data) => (
               <li
                 key={data.name}
-                className="cursor-pointer hover:text-gray-500 uppercase"
+                className="cursor-pointer hover:text-gray-500 uppercase font-bold text-[18px]"
               >
                 <Link to={data.link} onClick={() => handleChange(data.photo)}>
                   {data.name}
