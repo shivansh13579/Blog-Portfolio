@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import image from "../../../assets/image.jpg";
 import image1 from "../../../assets/a1.jpg";
 import image2 from "../../../assets/b1.jpg";
@@ -8,6 +8,7 @@ import { BookOpen, CircleUserRound, Menu, Store, X } from "lucide-react";
 import LoginButton from "./LoginButton";
 
 export default function Header() {
+  const location = useLocation();
   const [scroll, setScroll] = useState(false);
   const [color, setColor] = useState(false);
   const [currentImage, setCurrentImage] = useState(image);
@@ -47,6 +48,15 @@ export default function Header() {
       icon: <CircleUserRound />,
     },
   ];
+
+  useEffect(() => {
+    const matchRoute = navLink.find((nav) => nav.link === location.pathname);
+    if (matchRoute) {
+      setCurrentImage(matchRoute.photo);
+    } else {
+      setCurrentImage(image);
+    }
+  }, [location.pathname]);
 
   const handleChange = (image) => {
     setCurrentImage(image);
