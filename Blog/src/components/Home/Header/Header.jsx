@@ -86,7 +86,6 @@ export default function Header() {
           className="w-full h-full object-cover"
           src={currentImage}
           alt="Header Image"
-          loading="lazy"
         />
       </div>
 
