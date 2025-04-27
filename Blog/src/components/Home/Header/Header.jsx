@@ -4,7 +4,16 @@ import image from "../../../assets/image.jpg";
 import image1 from "../../../assets/a1.jpg";
 import image2 from "../../../assets/b1.jpg";
 import image3 from "../../../assets/c1.jpg";
-import { BookOpen, CircleUserRound, Menu, Store, X } from "lucide-react";
+import course from "../../../assets/course.jpg";
+import {
+  BookOpen,
+  CircleUserRound,
+  GraduationCap,
+  Menu,
+  Store,
+  Video,
+  X,
+} from "lucide-react";
 import LoginButton from "./LoginButton";
 
 export default function Header() {
@@ -39,8 +48,14 @@ export default function Header() {
   }, [menuOpen]);
 
   const navLink = [
-    { link: "/categories", name: "Blog", photo: image1, icon: <BookOpen /> },
+    {
+      link: "/courses",
+      name: "Courses",
+      photo: course,
+      icon: <GraduationCap />,
+    },
     { link: "/about", name: "About", photo: image2, icon: <Store /> },
+    { link: "/categories", name: "Blog", photo: image1, icon: <BookOpen /> },
     {
       link: "/contact",
       name: "Contact Us",

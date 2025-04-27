@@ -8,6 +8,8 @@ import Layout from "./pages/Layout";
 import BlogDetails from "./pages/BlogDetails";
 import Post from "./pages/Post";
 import Login from "./pages/Login";
+import Video from "./pages/Video";
+import Cource from "./pages/Cource";
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
           <Route path="/posts/:postId" element={<Post />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/courses" element={<Cource />} />
         </Route>
         <Route path="/login" element={<Login />} />
       </Routes>
