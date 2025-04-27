@@ -53,7 +53,6 @@ function BlogDetails() {
         );
 
         const snapshot = await getDocs(q);
-        console.log("snapshot", snapshot);
 
         const fetchedPosts = snapshot.docs.map((doc) => ({
           id: doc.id,

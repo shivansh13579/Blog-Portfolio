@@ -39,8 +39,6 @@ export default function LoginButton() {
     return <h1>Loading...</h1>;
   }
 
-  console.log("user", user);
-
   if (user) {
     return (
       <section className="flex gap-1">

@@ -19,7 +19,6 @@ function Blog() {
           id: doc.id,
           ...doc.data(),
         }));
-        console.log("categories", categories);
         setCategories(categories);
         setLoading(false);
       } catch (error) {
