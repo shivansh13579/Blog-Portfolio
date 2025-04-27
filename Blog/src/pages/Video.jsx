@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Video = () => {
+  const [loading, setLoading] = useState(true);
   const videoLinks = [
     "https://www.instagram.com/reel/DI1KThXy6qy/",
     "https://www.instagram.com/reel/DIv8o7QJ9RH/",
@@ -13,6 +14,14 @@ const Video = () => {
     "https://www.instagram.com/reel/DHlpID9Sxq4/",
   ];
 
+  useEffect(() => {
+    const time = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(time);
+  }, []);
+
   return (
     <>
       <div className="flex items-center justify-center mt-5 py-6">
@@ -20,29 +29,36 @@ const Video = () => {
           Course// <span className="text-blue-500">Javascript</span>
         </h1>
       </div>
-      <div className="w-full flex flex-col md:flex-row gap-5 md:overflow-x-auto py-5 hide-scrollbar">
-        {videoLinks.map((link, index) => {
-          const embedLink = `https://www.instagram.com/p/${
-            link.split("/")[4]
-          }/embed`;
 
-          return (
-            <div
-              key={index}
-              className="w-full mx-auto px-5 md:w-60 h-96 md:h-80 rounded-lg flex-shrink-0 relative overflow-hidden"
-            >
-              <iframe
-                src={embedLink}
-                className="w-full h-full md:-mt-14 -mt-14" // Adjusted margin top based on screen
-                frameBorder="0"
-                scrolling="no"
-                allowTransparency="true"
-                title={`Instagram Video ${index + 1}`}
-              />
-            </div>
-          );
-        })}
-      </div>
+      {loading ? (
+        <div className="flex items-center justify-center">
+          <h1 className="py-4  text-xl text-center">Loading...</h1>
+        </div>
+      ) : (
+        <div className="w-full flex flex-col md:flex-row gap-5 md:overflow-x-auto py-5 hide-scrollbar">
+          {videoLinks.map((link, index) => {
+            const embedLink = `https://www.instagram.com/p/${
+              link.split("/")[4]
+            }/embed`;
+
+            return (
+              <div
+                key={index}
+                className="w-full mx-auto px-5 md:w-60 h-96 md:h-80 rounded-lg flex-shrink-0 relative overflow-hidden"
+              >
+                <iframe
+                  src={embedLink}
+                  className="w-full h-full md:-mt-14 -mt-14" // Adjusted margin top based on screen
+                  frameBorder="0"
+                  scrolling="no"
+                  allowTransparency="true"
+                  title={`Instagram Video ${index + 1}`}
+                />
+              </div>
+            );
+          })}
+        </div>
+      )}
     </>
   );
 };

@@ -42,8 +42,8 @@ function Header() {
         <div className="flex flex-col gap-3 py-4 mt-4">
           <div className="w-full  flex gap-5 items-center justify-start">
             <a
-              href="/shiva.pdf"
-              download="shiva.pdf"
+              href="/abc.pdf"
+              download="abc.pdf"
               className="py-2 px-4 bg-red-500 font-serif font-semibold text-white w-full rounded-md hover:bg-red-700 flex-1 flex items-center justify-start gap-1"
             >
               Resume
